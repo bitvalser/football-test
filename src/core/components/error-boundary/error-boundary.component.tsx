@@ -4,6 +4,7 @@ import * as Styled from './error-boundary.styles';
 
 type ErrorBoundaryProps = PropsWithChildren<WithTranslation>;
 type ErrorBoundaryState = { hasError: boolean };
+
 class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
   constructor(props: ErrorBoundaryProps) {
     super(props);

@@ -6,7 +6,7 @@ import { AppRoutes, AppRoutesParamList } from '@navigators/root.navigator';
 import { useNavigation } from '@react-navigation/native';
 import { teamsDataSelector, teamsLoadingSelector } from '@store/selectors/teams';
 import { getTeamsAction } from '@store/actions/teams';
-import EmptyList from '@core/components/empty-list/empty-list.component';
+import { EmptyList } from '@core/components/empty-list';
 import * as Styled from './teams-list.styles';
 import { TeamItem } from './components/team-item';
 import { useTheme } from 'styled-components';

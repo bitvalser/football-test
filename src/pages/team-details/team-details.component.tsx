@@ -1,4 +1,5 @@
 import EmptyList from '@core/components/empty-list/empty-list.component';
+import { TeamLogo } from '@core/components/team-logo';
 import { MatchModel } from '@core/interfaces/match.interface';
 import { PlayerModel } from '@core/interfaces/player.interface';
 import { AppRoutes, AppRoutesParamList } from '@navigators/root.navigator';
@@ -42,13 +43,16 @@ const TeamDetailsPage: FC = () => {
       {
         title: t('teams.matches'),
         key: 'matches',
-        renderItem: ({ item: { score, awayTeam, homeTeam } }) => (
+        renderItem: ({ item: { score, awayTeam, homeTeam, competition, utcDate, status } }) => (
           <MatchItem
             awayScore={score.fullTime.awayTeam}
             awayTeam={awayTeam.name}
             homeScore={score.fullTime.homeTeam}
             homeTeam={homeTeam.name}
             winner={score.winner}
+            competition={competition.name}
+            date={utcDate}
+            status={status}
           />
         ),
         data: matches,
@@ -70,6 +74,7 @@ const TeamDetailsPage: FC = () => {
   return (
     <Styled.Container>
       <SectionList
+        stickySectionHeadersEnabled
         refreshControl={
           <RefreshControl refreshing={isTeamLoading} onRefresh={handleUpdate} colors={[theme.pallette.primary]} />
         }
@@ -87,6 +92,14 @@ const TeamDetailsPage: FC = () => {
           ) : null
         }
         ListEmptyComponent={<EmptyList />}
+        ListHeaderComponent={
+          team ? (
+            <Styled.TeamInfoContainer>
+              <TeamLogo url={team.crestUrl} size={64} />
+              <Styled.TeamName>{team.name}</Styled.TeamName>
+            </Styled.TeamInfoContainer>
+          ) : null
+        }
       />
     </Styled.Container>
   );

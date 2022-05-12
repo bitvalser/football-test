@@ -4,8 +4,7 @@ import CommonStyles from '@theme/common';
 export const Container = styled.View`
   ${CommonStyles.shadow}
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
   padding: 6px 8px;
   margin: 4px 0;
   border-radius: 4px;
@@ -25,8 +24,29 @@ export const ScoreText = styled.Text`
 `;
 
 export const VersusText = styled.Text`
-  margin-left: 6px;
-  margin-right: 6px;
+  font-size: 16px;
+  color: ${({ theme }) => theme.pallette.text};
+`;
+
+export const Header = styled.Text`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const Footer = styled.Text`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const CompetitionName = styled.Text`
+  font-size: 18px;
+  font-weight: bold;
+  color: ${({ theme }) => theme.pallette.text};
+`;
+
+export const Date = styled.Text`
   font-size: 16px;
   color: ${({ theme }) => theme.pallette.text};
 `;

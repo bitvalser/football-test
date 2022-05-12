@@ -1,3 +1,4 @@
+import { TeamLogo } from '@core/components/team-logo';
 import React, { FC, memo } from 'react';
 import { TouchableOpacity } from 'react-native';
 import * as Styled from './team-item.styles';
@@ -17,7 +18,7 @@ const TeamItem: FC<TeamItemProps> = memo(({ id, logo, name, onSelect }) => {
   return (
     <TouchableOpacity onPress={handleClick}>
       <Styled.Container>
-        <Styled.Logo source={{ uri: logo }} />
+        <TeamLogo url={logo} />
         <Styled.TeamName>{name}</Styled.TeamName>
       </Styled.Container>
     </TouchableOpacity>

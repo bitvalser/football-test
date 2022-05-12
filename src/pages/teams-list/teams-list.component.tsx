@@ -1,5 +1,5 @@
 import React, { FC, useCallback, useEffect } from 'react';
-import { FlatList, RefreshControl } from 'react-native';
+import { RefreshControl } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { AppRoutes, AppRoutesParamList } from '@navigators/root.navigator';
@@ -37,13 +37,13 @@ const TeamsListPage: FC = () => {
 
   return (
     <Styled.Container>
-      <FlatList
+      <Styled.TeamsList
         refreshControl={
           <RefreshControl refreshing={isTeamsLoading} onRefresh={handleUpdate} colors={[theme.pallette.primary]} />
         }
         data={teams}
         renderItem={({ item }) => (
-          <TeamItem id={item.id} logo={item.crestUrl} name={item.crestUrl} onSelect={handleTeamSelect} />
+          <TeamItem id={item.id} logo={item.crestUrl} name={item.name} onSelect={handleTeamSelect} />
         )}
         keyExtractor={(item) => item.id.toString()}
         ListEmptyComponent={<EmptyList />}

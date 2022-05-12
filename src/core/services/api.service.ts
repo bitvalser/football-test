@@ -1,9 +1,16 @@
+import { APP_CONFIG } from '@core/config/app.config';
 import axios from 'axios';
-import Config from 'react-native-config';
 
 const ApiClient = axios.create({
-  baseURL: Config.FOOTBALL_API_URL,
+  baseURL: APP_CONFIG.FOOTBALL_API_URL,
   timeout: 5000,
 });
 
+ApiClient.interceptors.request.use((config) => {
+  config.headers = {
+    'X-Auth-Token': APP_CONFIG.FOOTBALL_API_KEY,
+  };
+
+  return config;
+});
 export default ApiClient;

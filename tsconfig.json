@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin",
+        "lint": {
+          "validProperties": [
+            "shadow-color",
+            "shadow-opacity",
+            "shadow-offset",
+            "resize-mode",
+            "shadow-radius",
+            "padding-horizontal",
+            "padding-vertical",
+            "margin-vertical",
+            "margin-horizontal",
+            "tint-color",
+            "aspect-ratio",
+            "elevation",
+            "text-shadow-color",
+            "text-shadow-offset",
+            "text-shadow-radius"
+          ]
+        }
+      }
+    ],
+    "target": "ES2019",
+    "module": "es6",
+    "jsx": "react-native",
+    "sourceMap": false,
+    "outDir": "build",
+    "baseUrl": "./src",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "strictNullChecks": false,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "typeRoots": ["./@types", "./node_modules/@types"],
+    "paths": {
+      "@assets/*": ["assets/*"],
+      "@core/*": ["core/*"],
+      "@navigators/*": ["navigators/*"],
+      "@theme/*": ["theme/*"],
+      "@pages/*": ["pages/*"],
+      "@store/*": ["store/*"]
+    }
+  },
+  "include": ["src"]
+}

@@ -1,0 +1,14 @@
+{
+  "common": {
+    "emptyList": "The list is empty"
+  },
+  "teams": {
+    "title": "Teams",
+    "versus": "vs.",
+    "players": "Players",
+    "matches": "Matches"
+  },
+  "errors": {
+    "boundaryText": "Something went wrong..."
+  }
+}
